@@ -29,6 +29,7 @@ class RequestIdMiddleware(object):
         request_id = get_request_id(request)
         s = get_start_time(request)
         request.request_id = request_id
+        request.s = s
         local.request_id = request_id
         local.s = s
         response = self.get_response(request)
